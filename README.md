@@ -1,0 +1,1 @@
+This is my first attempt at incorporating javascript into web design.  In this project, the user will play rock-paper-scissors against the computer through the console.
