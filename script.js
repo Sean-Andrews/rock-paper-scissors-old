@@ -81,4 +81,4 @@ function result() {
     }
 }
 
-console.log(result());
+console.log(result);
