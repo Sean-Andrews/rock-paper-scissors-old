@@ -4,19 +4,8 @@
 
 function computerPlay() {
     let num = Math.floor(Math.random() * 3);
-    
-    //  Function then assigns each integer either rock, paper, or scissors 
-    
-    if (num === 0) {
-        return 0;
-    } else if (num === 1) {
-        return 1;
-    } else {
-        return 2;
-    }
+    return num;
 }
-
-console.log(computerPlay());
 
 // This function allows the player to input their selection
 
@@ -35,3 +24,61 @@ function playerChoice() {
     }
 }
 
+// These statements set up the upcoming functions
+
+let computerSelection = computerPlay();
+let playerSelection = playerChoice();
+let score = 0;
+
+// This function plays a single round
+
+function playRound(playerSelection, computerSelection) {
+      if (playerSelection === 0 && computerSelection === 1) {
+        return "You lose!  Paper beats rock";
+    } else if (playerSelection === 0 && computerSelection === 2) {
+        score += 1;
+        return "You win!  Rock beats scissors";
+    } else if (playerSelection === 1 && computerSelection === 0) {
+        score += 1;
+        return "You win!  Paper beats rock";
+    } else if (playerSelection === 1 && computerSelection === 2) {
+        return "You lose!  Scissors beats paper";
+    } else if (playerSelection === 2 && computerSelection === 0) {
+        return "You lose!  Rock beats scissors";
+    } else if (playerSelection === 2 && computerSelection === 1) {
+        score += 1;
+        return "You win!  Scissors beats paper";
+    } else {
+        return "It's a tie!";
+    }
+}
+
+// This function plays a five round game and keeps score
+
+function game() {
+    console.log(playRound(playerSelection, computerSelection));
+    console.log("Your score is " + score);
+    computerSelection = computerPlay();
+    playerSelection = playerChoice();
+}
+
+// The order of gameplay
+
+game();
+game();
+game();
+game();
+console.log(playRound());
+console.log("Your score is " + score);
+
+// A function to announce results
+
+function result() {
+    if (score >= 3) {
+        return "You win!"
+    } else {
+        return "Better luck next time!"
+    }
+}
+
+console.log(result());
