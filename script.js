@@ -8,15 +8,19 @@ function computerPlay() {
     //  Function then assigns each integer either rock, paper, or scissors 
     
     if (num === 0) {
-        console.log("Rock!");
-        return rock;
+        return "Rock!";
     } else if (num === 1) {
-        console.log("Paper!");
-        return paper;
+        return "Paper!";
     } else {
-        console.log("Scissors!")
-        return scissors;
+        return "Scissors!";
     }
 }
 
-computerPlay()
+console.log(computerPlay());
+
+// This statement allows a player to input a selection
+
+let playerSelection = prompt("Choose rock, paper, or scissors: ", "");
+playerSelection = playerSelection.toLowerCase();
+console.log(playerSelection);
+
