@@ -8,7 +8,7 @@ function computerPlay() {
 }
 
 // This function allows the player to input their selection
-
+/*
 function playerChoice() {
     let choice = prompt("Choose rock, paper, or scissors: ", "");
     choice = choice.toLowerCase();
@@ -25,31 +25,48 @@ function playerChoice() {
 }
 
 // These statements set up the upcoming functions
-
-let computerSelection = computerPlay();
-let playerSelection = playerChoice();
+*/
 let score = 0;
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+
+rock.addEventListener('click', () => {
+    playerSelection = 0;
+    playRound();
+});
+paper.addEventListener('click', () => {
+    playerSelection = 1;
+    playRound();
+});
+scissors.addEventListener('click', () => {
+    playerSelection = 2;
+    playRound();
+});
 
 // This function plays a single round
 
-function playRound(playerSelection, computerSelection) {
-      if (playerSelection === 0 && computerSelection === 1) {
-        return "You lose!  Paper beats rock";
+
+function playRound() {
+    let computerSelection = computerPlay();
+    if (playerSelection === 0 && computerSelection === 1) {
+        console.log("You lose!  Paper beats rock");
     } else if (playerSelection === 0 && computerSelection === 2) {
         score += 1;
-        return "You win!  Rock beats scissors";
+        console.log("You win!  Rock beats scissors");
     } else if (playerSelection === 1 && computerSelection === 0) {
         score += 1;
-        return "You win!  Paper beats rock";
+        console.log("You win!  Paper beats rock");
     } else if (playerSelection === 1 && computerSelection === 2) {
-        return "You lose!  Scissors beats paper";
+        console.log("You lose!  Scissors beats paper");
     } else if (playerSelection === 2 && computerSelection === 0) {
-        return "You lose!  Rock beats scissors";
+        console.log("You lose!  Rock beats scissors");
     } else if (playerSelection === 2 && computerSelection === 1) {
         score += 1;
-        return "You win!  Scissors beats paper";
+        console.log("You win!  Scissors beats paper");
     } else {
-        return "It's a tie!";
+        console.log("It's a tie!");
     }
 }
 
@@ -62,8 +79,14 @@ function game() {
     playerSelection = playerChoice();
 }
 
-// The order of gameplay
+// Incorporates UI buttons
 
+
+
+        
+        
+// The order of gameplay
+/*
 game();
 game();
 game();
@@ -81,4 +104,5 @@ function result() {
     }
 }
 
-console.log(result);
+console.log(result());
+*/
